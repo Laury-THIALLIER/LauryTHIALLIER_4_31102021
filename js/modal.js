@@ -1,7 +1,10 @@
 // DOM Elements
+const modalForm = document.querySelector("#modalForm");
+const modalThanks = document.querySelector(".thanks");
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalCloseBtn = document.querySelector(".close");
+const modalCloseBtnBottom = document.querySelector(".closeModal");
 const modalSubmitBtn = document.querySelector(".btn-submit");
 const firstName = document.querySelector("#first");
 const formDataFirst = document.querySelector(".formDataFirst");
@@ -34,10 +37,14 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // Launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  modalForm.style.display = "block";
+  modalThanks.style.display = "none";
 }
 
 // Close modal event
 modalCloseBtn.addEventListener("click", closeModal);
+modalCloseBtnBottom.addEventListener("click", closeModal);
+
 
 // Close modal form
 function closeModal() {
@@ -54,6 +61,10 @@ modalSubmitBtn.addEventListener("click", (e) => {
   town();
   checkboxes();
   e.preventDefault();
+  if (nbrFirst + nbrLast + nbrEmail + nbrBirthdate + nbrQuantity + nbrTown + nbrCheckboxes == 0) {
+        modalForm.style.display = "none";
+        modalThanks.style.display = "flex";
+  }
 });
 
 // First verification
