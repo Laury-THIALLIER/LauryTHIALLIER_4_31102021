@@ -1,7 +1,7 @@
 <br>
 <p align="center">
   <a href="https://github.com/Laury-THIALLIER/LauryTHIALLIER_4_31102021">
-    <img src="starterOnly/Logo.png" alt="Logo" width="300" height="auto">
+    <img src="img/Logo.png" alt="Logo" width="300" height="auto">
   </a>
 
   <h3 align="center">GameOn</h3>
@@ -16,12 +16,12 @@
 
 ### VERSION DESKTOP :
   <p align="center">
-    <img src="starterOnly/Desktop.png" alt="Version Desktop">
+    <img src="img/Desktop.png" alt="Version Desktop">
   </p>
 
 ### VERSION MOBILE :
   <p align="center">
-    <img src="starterOnly/Mobile.png" width="450px" height="auto" alt="Version Mobile">
+    <img src="img/Mobile.png" width="450px" height="auto" alt="Version Mobile">
   </p>
 
 
