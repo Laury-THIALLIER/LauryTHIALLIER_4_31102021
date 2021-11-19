@@ -21,13 +21,13 @@ const formDataTown = document.querySelector(".formDataTown");
 const check = document.querySelector("#checkbox1");
 const formDataCheckboxes = document.querySelector(".formDataCheckboxes");
 
-// Navigation
+// Mobile navigation menu
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  var nav = document.getElementById("myTopnav");
+  if (nav.className.includes("topnav")) {
+    nav.className += " responsive";
   } else {
-    x.className = "topnav";
+    nav.className = "topnav";
   }
 }
 
@@ -51,7 +51,7 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-// Submit button
+// Validation with submit button
 modalSubmitBtn.addEventListener("click", (e) => {
   first();
   last();
@@ -78,10 +78,12 @@ let nbrFirst = 0;
 function first() {
   if (firstName.validity.valid == false && nbrFirst === 0) {
     formDataFirst.appendChild(errorFirst);
+    document.querySelector(".formDataFirst input").style.border = "2px solid red";
     errorFirst.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     nbrFirst = 1;
   }
   else if (firstName.validity.valid == true && nbrFirst === 1) {
+    document.querySelector(".formDataFirst input").style.border = "none";
     formDataFirst.removeChild(errorFirst);
     nbrFirst = 0;
   }
@@ -98,10 +100,12 @@ let nbrLast = 0;
 function last() {
   if (lastName.validity.valid == false && nbrLast === 0) {
     formDataLast.appendChild(errorLast);
+    document.querySelector(".formDataLast input").style.border = "2px solid red";
     errorLast.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     nbrLast = 1;
   }
   else if (lastName.validity.valid == true && nbrLast === 1) {
+    document.querySelector(".formDataLast input").style.border = "none";
     formDataLast.removeChild(errorLast);
     nbrLast = 0;
   }
@@ -118,10 +122,12 @@ let nbrEmail = 0;
 function email() {
   if (emailAddress.validity.valid == false && nbrEmail === 0) {
     formDataEmail.appendChild(errorEmail);
+    document.querySelector(".formDataEmail input").style.border = "2px solid red";
     errorEmail.textContent = "Veuillez entrer une adresse email valide.";
     nbrEmail = 1;
   }
   else if (emailAddress.validity.valid == true && nbrEmail === 1) {
+    document.querySelector(".formDataEmail input").style.border = "none";
     formDataEmail.removeChild(errorEmail);
     nbrEmail = 0;
   }
@@ -138,10 +144,12 @@ let nbrBirthdate = 0;
 function birthdate() {
   if (birth.validity.valid == false && nbrBirthdate === 0) {
     formDataBirthdate.appendChild(errorBirthdate);
+    document.querySelector(".formDataBirthdate input").style.border = "2px solid red";
     errorBirthdate.textContent = "Veuillez entrer une date de naissance valide.";
     nbrBirthdate = 1;
   }
   else if (birth.validity.valid == true && nbrBirthdate === 1) {
+    document.querySelector(".formDataBirthdate input").style.border = "none";
     formDataBirthdate.removeChild(errorBirthdate);
     nbrBirthdate = 0;
   }
@@ -158,10 +166,12 @@ let nbrQuantity = 0;
 function quantity() {
   if (qty.validity.valid == false && nbrQuantity === 0) {
     formDataQuantity.appendChild(errorQuantity);
+    document.querySelector(".formDataQuantity input").style.border = "2px solid red";
     errorQuantity.textContent = "Vous devez entrer un chiffre.";
     nbrQuantity = 1;
   }
   else if (qty.validity.valid == true && nbrQuantity === 1) {
+    document.querySelector(".formDataQuantity input").style.border = "none";
     formDataQuantity.removeChild(errorQuantity);
     nbrQuantity = 0;
   }
@@ -192,6 +202,7 @@ function checkboxes() {
     formDataCheckboxes.appendChild(errorCheckboxes);
     errorCheckboxes.textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
     nbrCheckboxes = 1;
+    console.log("Coucou2");
   }
   else if (check.validity.valid == true && nbrCheckboxes === 1) {
     formDataCheckboxes.removeChild(errorCheckboxes);
